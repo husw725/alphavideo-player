@@ -1,0 +1,17 @@
+apply plugin: 'com.android.library'
+apply from: '../common.gradle'
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+ext {
+    GROUP = 'com.melot.android'
+    VERSION_NAME = '1.0.3'
+    PUBLISH_TYPE = 'aar'
+
+    //1.0.3 支持静音
+    //1.0.2 尝试修复bugly #728778
+    //1.0.1 添加setTranslateM方法，可对FitIn类型下的动画平移
+}
+
+apply from: '../maven_publish.gradle'
